@@ -1,0 +1,378 @@
+/* pages/index/index.wxss */
+/* 定位样式 */
+.container {
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  box-sizing: border-box; 
+  position: absolute; /*绝对定位*/
+  top: 0;
+  left: 0;
+  padding: 30rpx;
+  padding-bottom: 10px;
+}
+
+.weather-title{
+  width: 100%;
+  margin-left: 5px;
+}
+.bg {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  /* background-image: url(/images/bg-png);
+  background-repeat:repeat-y; */
+
+}
+.bg image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 搜索 */
+.box-top{
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.wrapper{
+  position: absolute;
+  font-size: 30px;
+  top: -2px;
+  right:5px;
+
+}
+.dingwei{
+  font-size: 20px;
+}
+
+/* 区域2：单行天气信息 */
+.lc-box{
+  margin: auto;
+}
+.w-info{
+  height: 250px;
+  width: 100%;
+  margin: 10px;
+}
+.weather{
+  width: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.w-tmp{
+font-size: 120rpx;
+}
+.w-txt{
+  margin-left: 10rpx;
+}
+/*图标样式*/
+.image-box{
+width: 210rpx;
+height: 210rpx;
+/* display: flex;
+justify-content: center; */
+margin:0 auto;
+}
+.image-box image{ 
+width: 200rpx;
+height: 200rpx;
+}
+
+/* 未来24小时天气预测  */
+.time-bg{
+  width: 100%;
+  padding: 20rpx 10rpx;
+  /* box-sizing: border-box; */
+  margin: 10rpx;
+  border-radius: 20rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.time-box{ 
+   border-radius: 20rpx;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin: 5px;
+   overflow: auto;
+}
+.time-list{ 
+  margin: 5px ;
+  width: 25%;
+  padding: 20rpx 10rpx;
+  border-radius: 10rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px; 
+}
+.time-list>view{
+  margin: 4rpx 0;
+}
+.time-speed,.time-time{
+  font-size: 20rpx;
+  color: #111111;
+}
+.bule{
+  color: rgba(88, 174, 255, 0.692);
+}
+
+
+/*区域4天气预测*/
+.forecast-bg {
+  width: 100%;
+ padding: 5px;
+ margin: 5px;
+ border-radius: 20rpx;
+ background-color: rgba(255, 255, 255, 0.5); 
+}
+.forecast-box{
+  margin: 10rpx;
+display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  border-radius: 10rpx;
+  font-size: 1em;
+  width: 100%; 
+}
+.typeImg {
+  width: 50rpx;
+  height: 50rpx;
+  font-size: 13px;
+ padding: 5rpx;
+  vertical-align: middle;
+}
+
+.castItem {
+  display: flex; 
+  /* width: 20%; */
+  align-items: center;
+  padding: 10rpx ;
+  margin: 10rpx ;
+  justify-content:space-between;
+  font-size: 14px;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+
+}
+.castType{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  font-size: 13px;
+}
+
+
+/* 空气指数信息 */
+.detail-bg{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+.detail{
+  width: 100%;
+  display: flex; 
+  justify-content: space-around;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin: 0 10rpx;
+}
+.left-ber{
+  height: 100%;
+  width: 40%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+.left-bar view:nth-of-type(2){
+font-size: 15px;
+}
+.left-bar view:nth-of-type(3){
+  font-size: 15px;
+  }
+.right-bar{
+ width: 55%;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap:wrap;  
+}
+.fengbiao{
+
+  animation: sway 10s ease-in-out infinite;
+    /* opacity: .95;s*/
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20rpx;
+}
+@keyframes sway {
+  0% {
+    transform: translate3d(0, 10rpx, 0) rotate(-10deg);
+  }
+  17% {
+    transform: translate3d(0, 0rpx, 0) rotate(10deg);
+  }
+  34% {
+    transform: translate3d(0, -10rpx, 0) rotate(-10deg);
+  }
+  50% {
+    transform: translate3d(0, -10rpx, 0) rotate(10deg);
+  }
+  67% {
+    transform: translate3d(0, 10rpx, 0) rotate(-10deg);
+  }
+  84% {
+    transform: translate3d(0, 10rpx, 0) rotate(10deg);
+  }
+  100% {
+    transform: translate3d(0, 10rpx, 0) rotate(-10deg);
+  }
+}
+.wind-dt{
+  color: #615c5c; 
+}
+.box-left{
+  width: 35%;
+  height: 30px;
+  margin: 20rpx 0;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.box-left view:nth-of-type(2) {
+  font-size: 26rpx;
+  color: #615c5c; 
+}
+
+.box-left view:nth-of-type(1){  
+  font-size: 30rpx;
+  color: #242323;
+}
+/* 空气质量 */
+.air-bg{
+width: 100%;
+ padding: 5px;
+ margin: 5px;
+ border-radius: 20rpx;
+ background-color: rgba(255, 255, 255, 0.5);
+}
+.air-box{
+
+  border-radius: 0rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 5px;
+}
+.air-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+margin: 10px;
+}
+.air-aqi{
+  width: 70px;
+  height: 70px;
+  border:5rpx solid rgb(64, 133, 236);
+ border-radius: 50%;
+ text-align: center;
+ line-height: 70px;
+  font-size: 30px;
+}
+.air-right{
+  width: 70%;
+  display: flex;
+  margin-left: 10rpx;
+  flex-wrap: wrap;
+}
+.air-item{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin: 15rpx  ;  
+}
+.air-item-r{
+  width: 100%;
+  padding: 10rpx 0;
+  border-bottom: 0.5rpx solid #acacac;
+text-align: center;
+font-size: 13px;
+
+}
+.air-item-t {
+  margin: 10rpx 0;
+  text-align: center;
+  font-size: 13px;
+  color: #242323;
+}
+
+/* 区域6：生活建议 */
+.life-bg{
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  border-radius: 10px;
+ padding: 5px;
+ margin: 5px;
+ margin-bottom: 50px;
+
+}
+.weather-title{
+ height: 20px;
+padding: 10rpx 0;
+line-height:20px ;
+font-size: 14px;
+
+}
+.life-box{
+  display: flex;
+  height: 200px;
+  overflow: auto;
+  margin-bottom: 10rpx;
+ 
+  justify-content:space-around;
+  flex-wrap:wrap;
+  width: 100%;
+  margin-top: 10px;
+}
+.life-item{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx;
+  margin: 5rpx;
+  border-radius: 10rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.life-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.life-txt{
+  font-size: 30rpx;
+  color: #242323;
+}
+.life-word{
+  font-size: 26rpx;
+  color: #615c5c;
+}
+.life-iamge{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}

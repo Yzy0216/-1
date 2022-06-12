@@ -1,0 +1,155 @@
+<!--pages/index/index.wxml-->
+<wxs src="../../utils/string.wxs" module="tools"/>
+<view >
+<view class="bg">
+  <image  mode="aspectFill" src="{{imageUrl}}"></image>
+</view>
+  <!--区域1：地区选择器-->
+  <view class='container'> 
+  <view class="box-top">
+    <view class="lc-box">
+  <!-- <picker mode='region' bindchange='regionChange'> -->
+    <view class="region">{{address}} </view>
+  <!-- </picker> -->
+ 
+</view>
+  <view class='wrapper'>
+    <navigator url="/libs/citySelector/switchcity/switchcity"> <view class="iconfont icon-dingwei dingwei"></view></navigator>
+    </view>
+ 
+</view>
+<view class="w-info">
+    <!--区域2：单行天气信息-->
+    <view class="weather">
+      <view class="w-tmp">{{now.temp}}</view> 
+    <view class="w-txt">
+     <text>°C</text>
+    <text>{{now.text}}</text>
+    </view>
+    </view>
+    
+  <!--区域3：天气图标-->
+  <view class="image-box">
+    <image  wx:if="{undefined{arr.length>0}}" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/weather_icon/icons/{{now.icon}}.svg" mode='widthFix'></image>
+  </view>
+  
+</view>
+     <!--空气指数信息-->
+     <view class="detail-bg">
+    <view class='detail'>
+    <view class="left-bar">  
+    <view>
+    <image class="fengbiao"  wx:if="{undefined{arr.length>0}}" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/weather_icon/lifeadvice/fengbiao.png" mode='widthFix'></image>
+    </view >
+        <view class="wind-dt">{{now.windDir}} <text>{{now.windScale}}级</text></view>       
+        <view class="wind-dt">{{now.windSpeed}} km/h</view>
+    </view>
+    <view class='right-bar'>
+        
+      <view class='box-left'>
+        <view>{{now.feelsLike}} °</view>
+      <view>体感温度</view>      
+      </view>
+      <view class='box-left'>
+        <view>{{now.cloud}} </view>
+      <view>云量</view>      
+      </view>
+      <view class='box-left'>
+        <view>{{now.precip}} </view>
+      <view>降水量</view>      
+      </view>
+      <view class='box-left'>
+        <view class='box-right'>{{now.humidity}} %</view>
+      <view>湿度</view>
+      </view>
+      <view class='box-left'>
+        <view>{{now.pressure}}Pa</view>
+      <view>气压</view>
+        
+      </view>
+      <view class='box-left'>
+        <view>{{now.vis}} km</view>
+      <view>能见度</view> 
+      </view>
+    </view>
+</view>
+  </view>
+
+<!-- 未来24小时天气预测 -->
+<view class="time-bg">
+<view class="time-box">
+  <view class="time-list" wx:for="{{timeWeather}}" wx:key="index" >
+    <view class="time-img">
+      <image class="typeImg" wx:if="{undefined{arr.length>0}}" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/weather_icon/icons/{{item.icon}}.svg"  alt="QWeather" mode='widthFix'></image>
+    </view>
+    <view class="time-temp">{{item.temp}}°</view>
+    <view class="iconfont icon-fengxiangbiao-jiantou bule"></view>
+    <view class="time-speed">{{item.windSpeed}}km/h</view>
+    <view class="time-time">{{tools.my_slice(item.fxTime,11,16)}}</view>
+  </view>
+</view>
+  
+</view>
+
+<!-- 区域4：未来7天天气预测 -->
+
+  <view class="forecast-bg">
+  <view class="forecast-box">
+    <view class="castItem" wx:for="{{forecast}}" wx:key="index">
+        <view class="castDay">{{tools.my_slice(item.fxDate,5,7)}}月{{tools.my_slice(item.fxDate,8,10)}}日</view>
+        <view class="castType">
+          <image class="typeImg" wx:if="{undefined{arr.length>0}}" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/weather_icon/icons/{{item.iconDay}}.svg" mode='widthFix' ></image>
+          {{item.textDay}}
+        </view>
+        <view class="castTmp">
+          {{item.tempMin}}° ~ {{item.tempMax}}°
+        </view>
+      </view>
+  </view>     
+  </view>
+
+
+  <!-- 空气质量 -->
+  <view class="air-bg">
+    <view class="weather-title">空气质量</view>
+    <view class="air-box">
+    <view class="air-left">
+    <view class="air-aqi">{{airNow.aqi}}</view>
+    <view style="margin-top: 10rpx;">{{airNow.category}}</view>
+    </view>
+    <view class="air-right">
+    <view class="air-item"><view class="air-item-r">{{airNow.pm2p5}}</view><view class="air-item-t">PM2.5</view></view>
+
+    <view class="air-item"><view class="air-item-r">{{airNow.pm10}}</view><view class="air-item-t">PM10</view></view>
+   
+    <view class="air-item"><view class="air-item-r">{{airNow.o3}}</view><view class="air-item-t">O3</view></view>
+    
+    <view class="air-item"><view class="air-item-r">{{airNow.co}}</view><view class="air-item-t">CO</view></view>
+   
+    <view class="air-item"><view class="air-item-r">{{airNow.so2}}</view><view class="air-item-t">SO2</view></view>
+    
+    <view class="air-item"><view class="air-item-r">{{airNow.no2}}</view><view class="air-item-t">NO2</view></view>
+    </view>
+    </view>
+
+  </view>
+  <!-- 区域6：生活建议 -->
+  <view class="life-bg">
+    <view class="weather-title">生活建议</view>
+    <view class="life-box">
+    <view class="life-item" wx:for="{{lifeadvice}}" wx:key="index">
+      <view class="life-image">
+        <image class="life-iamge" wx:if="{undefined{arr.length>0}}" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/weather_icon/lifeadvice/{{item.type}}.png" mode='widthFix'></image></view>
+      <view class="life-info" bindtap="showTxt" data-name="{{item.text}}">
+        <view class="life-txt">{{item.name}}</view>
+      <view class="life-word">{{item. category}}</view>
+      </view>
+     
+    </view>
+  </view>
+  </view>
+ 
+</view>
+</view>
+ 
+ 

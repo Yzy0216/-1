@@ -1,0 +1,41 @@
+<view class="index-body">
+<!-- 首页轮播 -->
+  <swiper class="swiper-box" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{1000}}"  circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="item">
+			<swiper-item class="seiper-smbox">
+					<image src="{{item.img}}" class="slide-image" />	
+			</swiper-item>
+		</block>
+  </swiper>
+  <!-- 广告 -->
+  <view class="ad-index">
+		<view class="ad-df">
+			<ad class="ad-df" unit-id="adunit-df4f5438f700d506"></ad>
+		</view>
+	</view>
+	<!--  页面服务部分  -->
+	<view class="server-box">
+		
+			<!--服务  -->
+			<view class="server-name">
+				<view class="server-text fc3d fs30">工具列表</view>
+			</view>
+			<!--列表  -->
+			<view class="list-server">
+				<!-- 循环 -->
+				<view class="listbox" wx:for="{{server}}" wx:key="img">
+					<navigator url="{{item.openpath}}" hover-class="none" open-type="navigate">
+						<view>
+							<image src="{{item.img}}" class="listimg" />
+						</view>
+						<view class="fs26 fc52 ta-c">
+							{{item.text}}
+						</view>
+					</navigator>
+				</view>
+			</view>
+	
+	</view>
+  <!-- 底线 -->
+  <view class="bottomLine">我是有底线的</view>
+</view>

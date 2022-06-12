@@ -1,0 +1,85 @@
+<view class="my-box">
+	<!-- 头部 -->
+<view wx:if="{{userInfo==null}}">
+	
+		<view class="my-login">
+			<view class="login-header head-pbox">
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/Head.jpg"></image>
+			<view class="login-txt">
+				<view class="txt txta">尚未微信授权</view>
+				<view class="txt">登录后获取用户头像和昵称体验更多功能</view>
+			</view>
+			</view>
+
+			<view class="login-foot">
+			<button bindtap="login">微信授权登录</button>
+			</view>
+		
+		</view>
+
+</view>
+	<view  wx:else>
+	<view class="my-head-box">	
+		<image class="head-bg" src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/my-bg.jpg"></image>	
+		<view class="head-pbox" >			
+			<image src="{{userInfo.avatarUrl}}"></image>
+			<text>{{userInfo.nickName}}</text>
+		 </view>
+		
+			<!-- open-type="getUserInfo" bindgetuserinfo="gologin" -->
+	
+		
+	</view>
+	
+		<view class="line"></view>
+	<view class="my-list-box">
+		<view class="my-list">
+		<view class="list-left">
+			<button class="btn-ww" plain open-type="contact">
+				<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/service.png"></image>
+				<text>客户服务</text>
+			</button>
+		</view>
+		<view class="liet-right">
+			<text></text>
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/rightArrow.png"></image>
+		</view>
+	</view>
+	<view class="my-list">
+		<view class="list-left" >
+		<button class="btn-ww" plain open-type="feedback">
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/opinion.png"></image>
+				<text>意见反馈</text>	
+		</button>
+				
+		</view>
+		<view class="liet-right">
+			<text></text>
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/rightArrow.png"></image>
+		</view>
+	</view>
+	<view class="my-list" bindtap="clearCache">
+		<view class="list-left">
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/delete.png"></image>
+			<text>清除缓存</text>
+		</view>
+		<view class="liet-right">
+			<!-- <text>6张</text> -->
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/rightArrow.png"></image>
+		</view>
+	</view>
+	<view class="my-list" bindtap="gonavigateTo" data-url="support">
+		<view class="list-left">
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/about.png"></image>
+			<text>关于</text>
+		</view>
+		<view class="liet-right">
+			<image src="cloud://cloud1-3goc951d16df6f69.636c-cloud1-3goc951d16df6f69-1311310803/images/rightArrow.png"></image>
+		</view>
+	</view>
+	</view>
+
+	<button  type="warn" class="func-box-btn" bindtap="loginOut">退出登录</button>
+	</view>
+	
+</view>

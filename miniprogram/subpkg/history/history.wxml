@@ -1,0 +1,14 @@
+<view class="ht-box">
+  <view  >
+    <!-- 循环 -->
+    <view class="ht-list" wx:for="{{getdata}}" wx:key="item" data-id="{{item.e_id}}" catchtap="godetails">
+      <view class="ht-list-year">{{item.date}}</view>
+      <view class="ht-list-event">{{item.title}}</view>
+    </view>
+  </view>
+  <!-- 无数据 -->
+  <!-- <view wx:if="{{!emptyType}}" class="empty-box">
+    <image class="e-img" src="../../images/empty.png" alt="" mode="widthFix" srcset="" />
+    <view class="e-con fc99">今日额度已使用完毕，请明天再试！</view>
+  </view> -->
+</view>

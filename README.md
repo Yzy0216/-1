@@ -1,6 +1,8 @@
 # # 乘风天气小程序
 ## 扫码体验
-![输入图片说明](img/erweima.jpg)
+![image](https://user-images.githubusercontent.com/95600921/173215239-4eebb631-39ba-4f34-9116-83ee4d2546ec.png)
+
+
 
 - 这是一款开箱即用的天气工具箱小程序，采用了和风天气的天气预测接口，具有以下功能：
 ##  首页
@@ -28,22 +30,7 @@
 4.其他数据可以通过和风天气的官网获取：https://dev.qweather.com/docs/api/
 
 #### 请求数据演示
-![输入图片说明](img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-04-26%20184724.png)
-
-#### 项目效果
-1. 首页
-
-![输入图片说明](img/1.png)
-![输入图片说明](img/2.png)
-![输入图片说明](img/3.png)
-2.工具栏
-
-![输入图片说明](img/2.1.png)
-3.我的
-
-![输入图片说明](img/3.1.png)
-![输入图片说明](img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-04-26%20185440.png)
-![输入图片说明](img/3.2.png)
+![image](https://user-images.githubusercontent.com/95600921/173215278-f2ff4b45-5f23-4147-b84c-5a31c006f319.png)
 
 #### 云开发（文档：https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html）
 
